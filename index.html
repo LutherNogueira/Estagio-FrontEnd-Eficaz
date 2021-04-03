@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>Teste Eficaz</title>
+    <meta charset="utf-8"> 
+
+    <!-- CSS Luana -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- JS Luana -->
+    <script src="js/script.js"></script>
+
+    <!-- Bootstrap e AJAX -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+
+    <!-- Eficaz -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/eficaz.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body class="light-gray">
+
+    <div class="container">
+        <div class="logo">
+            <img src="https://eficazmarketing.com/wp-content/themes/eficaz3.0/assets/img/eficaz_logo_black.png"
+                alt="Logo">
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <ul class="btn ul li:hover col-12">
+                    <li onclick="showHideElement('formCadastro')">Cadastro</li>
+                    <li onclick="showHideElement('listarCadastro')">Lista de cadastro</li>
+                </ul>
+            </div>
+            <div class="col-9" id="formCadastro" name="formCadastro" style="display: none;">
+                <div class="form-box row justify-content-md-center">
+                    <h2 class="blue-title">CADASTRO</h2>
+                    <form method="POST">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="emailPessoal">E-mail pessoal do candidato</label>
+                                <input class="form-control" type="email" id="emailPessoal" name="emailPessoal" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="nomeCadastro">Nome completo</label>
+                                <input class="form-control" type="text" id="nomeCadastro" name="nomeCadastro" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="emailCadastro">E-mail</label>
+                                <input class="form-control" type="email" id="emailCadastro" name="emailCadastro" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="telefoneCadastro">Telefone (DDD)</label>
+                                <input class="form-control" type="tel" id="telefoneCadastro" name="telefoneCadastro" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="logradouroCadastro">Rua</label>
+                                <input class="form-control" type="text" id="logradouroCadastro"
+                                    name="logradouroCadastro" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="numeroCadastro">N.º</label>
+                                <input class="form-control" type="text" id="numeroCadastro" name="numeroCadastro" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="complementoCadastro">Complemento</label>
+                                <input class="form-control" type="text" id="complementoCadastro"
+                                    name="complementoCadastro">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="bairroCadastro">Bairro</label>
+                                <input class="form-control" type="text" id="bairroCadastro" name="bairroCadastro">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="cepCadastro">CEP</label>
+                                <input class="form-control" type="text" id="cepCadastro" name="cepCadastro" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="cidadeCadastro">Cidade</label>
+                                <input class="form-control" type="text" id="cidadeCadastro" name="cidadecadastro" required>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="ufcadastro">UF</label>
+                                <input class="form-control" class="col-1" type="text" id="ufCadastro" name="ufcadastro" required>
+                            </div>
+                        </div>
+                        <button class="btn light-green col-2" type="submit" id="submitCadastro">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Listar Cadastros -->
+            <div class="col-9" id="listarCadastro" name="listarCadastro" style="display: none;">
+                <div class="col align-self-end">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Lista de Cadastrados</h5>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="table-responsive table-space">
+                                        <table class="table table-hover" id="table-lista-cadastrados">
+                                            <thead>
+                                            <tr>
+                                                <th>Nome</th>
+                                                <th>E-mail</th>
+                                                <th>Endereço</th>
+                                                <th>Telefone</th>
+                                                <th>Ação</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>               
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<!-- Cria mascara para telefone e cep -->
+
+<script type="text/javascript">
+    $("#telefoneCadastro").mask("(00)00000-0000");
+    $("#cepCadastro").mask("00000-000");
+</script>
+
+<!-- Envia dados para API Eficaz -->
+<script>
+    $.ajax({
+        method: "POST",
+        url: "https://estagio.eficazmarketing.com/api/user",
+        data: {
+            seu_email: 'emailPessoal',
+            nome: 'nomeCadastro',
+            email: 'emailCadastro',
+            telefone: 'telefoneCadastro',
+            rua: 'logradouroCadastro',
+            número: 'numeroCadastro',
+            complemento: 'complementoCadastro',
+            bairro: 'bairroCadastro',
+            cidade: 'cidadeCadastro',
+            cep: 'ufCadastro'
+        }
+    })
+</script>
+
+<!-- Script Eficaz -->
+<script type="application/javascript">
+    $(document).ready(function(){
+        function buscaUsuariosCadastrados(){
+            $.ajax({
+                url: "https://estagio.eficazmarketing.com/api/user",
+                type: "GET",
+                data: []
+            }).done(function(result) {
+                $.each(result, function(index, usuario){
+                    let idusuario = usuario.id;
+
+                    let tr = '<tr id="usuario_' + idusuario + '">';
+                    
+                    tr += '<td id="' + idusuario + '" data-nome="' + usuario.nome + '">' + usuario.nome + '</td>';
+                    tr += '<td id="' + idusuario + '" data-email="' + usuario.email + '">' + usuario.email + '</td>';
+                    tr += '<td id="' + idusuario + '" data-endereco="' + usuario.cep+usuario.numero + '">' + usuario.rua +", "+usuario.numero+ '<br>'+usuario.bairro+'<br>'+usuario.cep+'<br>'+usuario.cidade+'-'+usuario.uf+'</td>';
+                    tr += '<td id="' + idusuario + '" data-telefone="' + usuario.telefone + '">' + usuario.telefone + '</td>';
+
+                    tr += '<td style="width:10%">';
+
+                    tr += '<button type="button" class="btn btn-success btEditar" id="btEditar_' + idusuario + '" onclick="editaCadastro('+idusuario+')">Editar</button><br/>';
+                    tr += '<button type="button" class="btn btn-danger btExcluir" id="btExcluir_' + idusuario + '" onclick="removeCadastro('+idusuario+')">Excluir</button>';
+
+                    tr += '</td>';
+                    tr += '</tr>';
+
+                    $("#table-lista-cadastrados > tbody").append(tr);
+
+                });
+            });
+        }
+
+        buscaUsuariosCadastrados();
+    });
+</script>
+
+</html>
