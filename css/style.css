@@ -35,6 +35,9 @@ ul{
     list-style-type: none;
   }
 
+i{
+    margin-right: 10px;
+}
 .btn li{
     padding: 8px;
     margin-bottom: 7px;
