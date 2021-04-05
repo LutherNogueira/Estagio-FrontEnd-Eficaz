@@ -1,7 +1,8 @@
 function showCadastro() {
+	$("form#form input").val("");
     var x = document.getElementById("formCadastro");
 	var y = document.getElementById("listarCadastro");
-	var z = document.getElementById("atualizaCadastro");
+	var z = document.getElementById("btnAtualizaCadastro");
 	var a = document.getElementById("submitCadastro");
 	y.style.display = "none";
     if (x.style.display === "none") {
@@ -117,48 +118,62 @@ function removeCadastro(id){
 	function editaCadastro(id){
 			$.ajax({
 				method: "GET",
-				url: "https://estagio.eficazmarketing.com/api/user/"+id,
-				data:{
-					seu_email: $("#emailPessoal").val(),
-					nome: $("#nomeCadastro").val(),
-					email: $("#emailCadastro").val(),
-					telefone: $("#telefoneCadastro").val(),
-					rua: $("#logradouroCadastro").val(),
-					numero: $("#numeroCadastro").val(),
-					complemento: $("#complementoCadastro").val(),
-					bairro: $("#bairroCadastro").val(),
-					cidade: $("#cidadeCadastro").val(),
-					cep: $("#cepCadastro").val(),
-					uf: $("#ufCadastro").val()
-				}
+				url: "https://estagio.eficazmarketing.com/api/user/"+id,			
+			})
+			.done(function (cadastro)
+			{
+				$("[name=id]").val(cadastro.id);	
+				$("#emailPessoal").val(cadastro.seu_email);
+				$("#nomeCadastro").val(cadastro.nome);
+				$("#emailCadastro").val(cadastro.email);
+				$("#telefoneCadastro").val(cadastro.telefone);
+				$("#logradouroCadastro").val(cadastro.rua);
+				$("#numeroCadastro").val(cadastro.numero);
+				$("#complementoCadastro").val(cadastro.complemento);
+				$("#bairroCadastro").val(cadastro.bairro);
+				$("#cidadeCadastro").val(cadastro.cidade);
+				$("#cepCadastro").val(cadastro.cep);
+				$("#ufCadastro").val(cadastro.uf)
+
 			})
 			
+			
+
 			//Mudança de Visibilidade das janelas e botões
 			var a = document.getElementById("formCadastro");
 			var b = document.getElementById("submitCadastro");
-			var c = document.getElementById("atualizaCadastro");
+			var c = document.getElementById("btnAtualizaCadastro");
 			var d = document.getElementById("listarCadastro");
 			a.style.display = "flex";
 			b.style.display = "none";
 			d.style.display = "none";
 			c.style.display = "flex";
-			
-			// Colocar informações na tela
-			$.ajax({
-				method: "PUT",
-				url: "https://estagio.eficazmarketing.com/api/user/"+id,
-				data: {
-					'emailPessoal': $("#emailPessoal").val(id),
-					"nomeCadastro": $("#nomeCadastro").val(),
-					"#emailCadastro": $("#emailCadastro").val(),
-					"#telefoneCadastro": $("#telefoneCadastro").val(),
-					"#logradouroCadastro": $("#logradouroCadastro").val(),
-					"#numeroCadastro": $("#numeroCadastro").val(),
-					"#complemento": $("#complementoCadastro").val(),
-					"#complementoCadastro": $("#bairroCadastro").val(),
-					"#cidadeCadastro": $("#cidadeCadastro").val(),
-					"#cepCadastro": $("#cepCadastro").val(),
-					"#ufCadastro": $("#ufCadastro").val()
-				},
-			})
+	}
+
+	window.atualizaCadastro = function()
+	{
+		// Colocar informações na tela
+		var id = $("[name=id]").val();
+		$.ajax({
+			method: "PUT",
+			url: "https://estagio.eficazmarketing.com/api/user/"+id,
+			data: {
+				seu_email: $("#emailPessoal").val(),
+				nome: $("#nomeCadastro").val(),
+				email: $("#emailCadastro").val(),
+				telefone: $("#telefoneCadastro").val(),
+				rua: $("#logradouroCadastro").val(),
+				numero: $("#numeroCadastro").val(),
+				complemento: $("#complementoCadastro").val(),
+				bairro: $("#bairroCadastro").val(),
+				cidade: $("#cidadeCadastro").val(),
+				cep: $("#cepCadastro").val(),
+				uf: $("#ufCadastro").val()
+			},
+
+			success: function(retorno) {
+				alert(retorno.message);
+				location.reload();
+			}	
+		})
 	}

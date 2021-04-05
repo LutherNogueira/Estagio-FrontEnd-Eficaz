@@ -48,6 +48,7 @@
                 <div class="form-box row justify-content-md-center">
                     <h2 class="blue-title">CADASTRO</h2>
                     <form id="form">
+                        <input type="hidden" name="id" id="id">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="emailPessoal">E-mail pessoal do candidato</label>
@@ -106,7 +107,7 @@
                             </div>
                         </div>
                         <button class="btn light-green col-2" onclick="enviaCadstro()" id="submitCadastro" style="display: flex;" >Cadastrar</button>
-                        <button class="btn light-green col-2" onclick="enviaCadstro()" id="atualizaCadastro" style="display: none;">Atualizar</button>
+                        <button class="btn light-green col-2" onclick="atualizaCadastro()" id="btnAtualizaCadastro"  type="button" style="display: none;">Atualizar</button>
                     </form>
                 </div>
             </div>
