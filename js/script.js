@@ -114,7 +114,7 @@ function removeCadastro(id){
 		});
 	}
 	
-	//função para editar cadastro da lista - incompleta, ainda não consegue jogar os dados no formulário (put nao funcionando)
+	//função para editar cadastro da lista
 	function editaCadastro(id){
 			$.ajax({
 				method: "GET",
